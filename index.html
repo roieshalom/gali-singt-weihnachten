@@ -70,5 +70,32 @@
             <p>©2025 Made by Papa ❤️</p>
         </footer>
     </div>
+
+    <script>
+  // keep reference to the currently playing audio
+  let currentAudio = null;
+
+  // get all audio elements on the page
+  const audioElements = document.querySelectorAll('audio'); // [web:7]
+
+  audioElements.forEach(audio => {
+    audio.addEventListener('play', () => {
+      // if another audio is playing, pause it
+      if (currentAudio && currentAudio !== audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0; // optional: reset to start [web:7]
+      }
+      currentAudio = audio;
+    });
+
+    // when an audio ends, clear the reference
+    audio.addEventListener('ended', () => {
+      if (currentAudio === audio) {
+        currentAudio = null;
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
