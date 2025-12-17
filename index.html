@@ -125,6 +125,8 @@
 
   <!-- Track song plays in GA4 -->
   <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    // Track song plays in GA4
     document.querySelectorAll('audio').forEach((audio) => {
       audio.addEventListener('play', () => {
         const container = audio.closest('.song-item') || audio.closest('div, section');
@@ -133,11 +135,14 @@
 
         if (typeof gtag !== 'undefined') {
           gtag('event', 'song_play', {
-            song_title: songTitle
+            song_title: songTitle,
+            debug_mode: true
           });
         }
       });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
