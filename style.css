@@ -1,6 +1,6 @@
 :root {
     /* Typography */
-    --font-family-main: 'Georgia', serif;
+    --font-family-main: 'Henny Penny', serif;
 
     /* Brand colors */
     --color-bg-gradient-start: #165B33;
@@ -41,6 +41,7 @@
 
 body {
     font-family: var(--font-family-main);
+    letter-spacing: .05em;
     background: linear-gradient(135deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
     min-height: 100vh;
     padding: var(--page-padding);
