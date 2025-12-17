@@ -8,6 +8,15 @@
 <!-- Android / general large icon -->
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-chrome.png"> <!-- [web:17][web:20][web:29] -->
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-51CRT4MWMT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-51CRT4MWMT');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gali singt Weihnachten</title>
@@ -93,6 +102,24 @@
     audio.addEventListener('ended', () => {
       if (currentAudio === audio) {
         currentAudio = null;
+      }
+    });
+  });
+</script>
+<script>
+  // Track song plays in GA4
+  document.querySelectorAll('audio').forEach((audio) => {
+    audio.addEventListener('play', () => {
+      // Get song title from the heading above the audio player
+      const container = audio.closest('div, section');
+      const heading = container ? container.querySelector('h2, h3, h4') : null;
+      const songTitle = heading ? heading.textContent.trim() : 'Unknown track';
+      
+      // Send event to GA4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'song_play', {
+          'song_title': songTitle
+        });
       }
     });
   });
