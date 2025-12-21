@@ -30,11 +30,6 @@
     /* Audio */
     --audio-height: 40px;
     --audio-controls-bg: #ffffff;
-
-    /* Like button */
-    --color-heart: #EA4630;
-    --color-heart-liked: #BB2528;
-    --color-heart-hover: #FF6B6B;
 }
 
 /* Global reset */
@@ -42,10 +37,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -76,11 +67,6 @@ h1 {
     color: var(--color-title);
     font-size: 2.5rem;
     margin-bottom: 10px;
-    transition: transform 0.2s ease;
-}
-
-h1:hover {
-    transform: scale(1.02);
 }
 
 .subtitle {
@@ -100,95 +86,18 @@ h1:hover {
     padding: 25px;
     border-radius: var(--radius-song-item);
     border-left: 5px solid var(--color-song-border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-width 0.2s ease;
-    cursor: pointer;
-}
-
-.song-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-left-width: 6px;
-}
-
-.song-item:focus-within {
-    outline: 2px solid var(--color-accent-border);
-    outline-offset: 2px;
-}
-
-.song-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    gap: 15px;
 }
 
 .song-item h2 {
     color: var(--color-subtitle);
     font-size: 1.3rem;
-    margin: 0;
-    flex: 1;
-}
-
-.like-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    font-family: var(--font-family-main);
-    font-size: 1rem;
-    color: var(--color-heart);
-    min-width: 75px;
-    justify-content: center;
-}
-
-.like-button:hover {
-    transform: scale(1.1);
-}
-
-.like-button:active {
-    transform: scale(0.95);
-}
-
-.like-button.liked {
-    color: var(--color-heart-liked);
-}
-
-.heart {
-    font-size: 1.1rem;
-    line-height: 1;
-    transition: transform 0.3s ease, color 0.3s ease;
-    display: inline-block;
-}
-
-.like-button.liked .heart {
-    color: var(--color-heart-liked);
-}
-
-.like-count {
-    font-size: 0.9rem;
-    font-weight: normal;
-    min-width: 28px;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    margin-bottom: 15px;
 }
 
 audio {
     width: 100%;
     height: var(--audio-height);
     outline: none;
-    transition: opacity 0.2s ease;
-}
-
-audio:focus {
-    outline: 2px solid var(--color-accent-border);
-    outline-offset: 2px;
-    border-radius: 4px;
 }
 
 audio::-webkit-media-controls-panel {
@@ -214,26 +123,6 @@ footer {
     }
     
     .subtitle {
-        font-size: 1rem;
-    }
-
-    .song-header {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .song-item h2 {
-        font-size: 1.1rem;
-    }
-
-    .like-button {
-        padding: 6px 10px;
-        font-size: 0.9rem;
-        min-width: 65px;
-        gap: 2px;
-    }
-
-    .heart {
         font-size: 1rem;
     }
 }

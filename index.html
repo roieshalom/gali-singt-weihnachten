@@ -38,108 +38,54 @@
     </header>
 
     <main class="songs-list">
-      <div class="song-item" data-song-id="nikolaus-nikolaus">
-        <div class="song-header">
-          <h2>Nikolaus, Nikolaus</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>Nikolaus, Nikolaus</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="Nikolaus, Nikolaus">
           <source src="audio/nikolausnikolaus.m4a" type="audio/mp4">
           <source src="audio/1nikolausnikolaus.mp3" type="audio/mpeg">
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>
       </div>
-      <div class="song-item" data-song-id="what-shall-we-do">
-        <div class="song-header">
-          <h2>What shall we do?</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>What shall we do?</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="What shall we do?">
           <source src="audio/what shall we do.m4a" type="audio/mp4">
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>
       </div>
-      <div class="song-item" data-song-id="e-r-kalter">
-        <div class="song-header">
-          <h2>E. R. Kalter</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>E. R. Kalter</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="E. R. Kalter">
           <source src="audio/e.r.kalter.m4a" type="audio/mp4">
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>
       </div>
-      <div class="song-item" data-song-id="der-willi-wumm">
-        <div class="song-header">
-          <h2>Der Willi Wumm</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>Der Willi Wumm</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="Der Willi Wumm">
           <source src="audio/derwilliwumm.m4a" type="audio/mp4">
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>
       </div>
-      <div class="song-item" data-song-id="ich-schenk-dir-einen-regenbogen">
-        <div class="song-header">
-          <h2>Ich schenk' dir einen Regenbogen</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>Ich schenk' dir einen Regenbogen</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="Ich schenk' dir einen Regenbogen">
           <source src="audio/ichschenkdir.m4a" type="audio/mp4">
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>
       </div>
-      <div class="song-item" data-song-id="un-poquito-cantas">
-        <div class="song-header">
-          <h2>Un poquito cantas</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>Un poquito cantas</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="Un poquito cantas">
           <source src="audio/poquito.m4a" type="audio/mp4">
           Ihr Browser unterstützt das Audio-Element nicht.
         </audio>
       </div>
-      <div class="song-item" data-song-id="weihnachtslied-aus-ghana">
-        <div class="song-header">
-          <h2>Weihnachtslied aus Ghana</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
+      <div class="song-item">
+        <h2>Weihnachtslied aus Ghana</h2>
         <audio controls controlsList="nodownload" preload="metadata" aria-label="Weihnachtslied aus Ghana">
           <source src="audio/ausghana.m4a" type="audio/mp4">
           Ihr Browser unterstützt das Audio-Element nicht.
-        </audio>
-      </div>
-      <div class="song-item" data-song-id="froh-weihnachten">
-        <div class="song-header">
-          <h2>Froh Weihnachten</h2>
-          <button class="like-button" aria-label="Gefällt mir" title="Gefällt mir">
-            <span class="heart">♡</span>
-            <span class="like-count">0</span>
-          </button>
-        </div>
-        <audio controls controlsList="nodownload" preload="metadata" aria-label="Froh Weihnachten">
-          <source src="audio/frohweihnachten.m4a" type="audio/mp4">
         </audio>
       </div>
     </main>
@@ -169,100 +115,6 @@
         }
       });
     });
-  </script>
-
-  <!-- Like functionality -->
-  <script>
-    // Initialize likes from localStorage or create empty object
-    function getLikes() {
-      const stored = localStorage.getItem('songLikes');
-      return stored ? JSON.parse(stored) : {};
-    }
-
-    // Save likes to localStorage
-    function saveLikes(likes) {
-      localStorage.setItem('songLikes', JSON.stringify(likes));
-    }
-
-    // Get user's liked songs
-    function getUserLikes() {
-      const stored = localStorage.getItem('userLikedSongs');
-      return stored ? JSON.parse(stored) : [];
-    }
-
-    // Save user's liked songs
-    function saveUserLikes(likedSongs) {
-      localStorage.setItem('userLikedSongs', JSON.stringify(likedSongs));
-    }
-
-    // Initialize likes on page load
-    function initializeLikes() {
-      const likes = getLikes();
-      const userLikedSongs = getUserLikes();
-      const songItems = document.querySelectorAll('.song-item');
-
-      songItems.forEach(item => {
-        const songId = item.getAttribute('data-song-id');
-        const likeButton = item.querySelector('.like-button');
-        const likeCount = item.querySelector('.like-count');
-        const heart = item.querySelector('.heart');
-
-        // Set initial count
-        const count = likes[songId] || 0;
-        likeCount.textContent = count;
-
-        // Check if user already liked this song
-        const isLiked = userLikedSongs.includes(songId);
-        if (isLiked) {
-          likeButton.classList.add('liked');
-          heart.textContent = '♥';
-        } else {
-          heart.textContent = '♡';
-        }
-
-        // Add click handler
-        likeButton.addEventListener('click', () => {
-          const currentLikes = getLikes();
-          const userLikes = getUserLikes();
-          const isCurrentlyLiked = userLikes.includes(songId);
-
-          if (isCurrentlyLiked) {
-            // Unlike: remove like
-            currentLikes[songId] = Math.max(0, (currentLikes[songId] || 0) - 1);
-            const index = userLikes.indexOf(songId);
-            if (index > -1) {
-              userLikes.splice(index, 1);
-            }
-            likeButton.classList.remove('liked');
-            heart.textContent = '♡';
-          } else {
-            // Like: add like
-            currentLikes[songId] = (currentLikes[songId] || 0) + 1;
-            userLikes.push(songId);
-            likeButton.classList.add('liked');
-            heart.textContent = '♥';
-          }
-
-          // Save and update UI
-          saveLikes(currentLikes);
-          saveUserLikes(userLikes);
-          likeCount.textContent = currentLikes[songId] || 0;
-
-          // Add animation
-          heart.style.transform = 'scale(1.3)';
-          setTimeout(() => {
-            heart.style.transform = '';
-          }, 200);
-        });
-      });
-    }
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initializeLikes);
-    } else {
-      initializeLikes();
-    }
   </script>
 </body>
 </html>
